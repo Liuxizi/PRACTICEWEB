@@ -21,10 +21,5 @@ public class UserController {
         return "/admin/login";
     }
 
-    @RequestMapping(value = "/dologin",method = RequestMethod.POST)
-    public String doLogin(HttpServletResponse response, User user, Model model){
-        if(UserSevice.login)
-    }
-
 
 }

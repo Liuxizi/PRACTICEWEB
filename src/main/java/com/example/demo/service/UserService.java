@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 
 import com.example.demo.dao.UserDao;
-import org.apache.catalina.User;
+import com.example.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +13,13 @@ public class UserService {
     UserDao userDao;
 
     public boolean login(String username, String password){
-        User user = userDao
+        User user = userDao.findByUsernameAndPassword(username, password);
+        if(null == user){
+
+            return false;
+        }else {
+
+            return true;
+        }
     }
-
-
 }
